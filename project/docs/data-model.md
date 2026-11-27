@@ -21,6 +21,8 @@
 
 في 27 نوفمبر 2026 شغّلنا الاستعلام التالي في `mongosh` على قاعدة العيّنة المحلية `heritage`. يختار المواقع بحسب المدينة والوسم واللغة، ثم يعدّ الجولات التي يشير حقل `site_ids` فيها إلى كل موقع.
 
+لتجربة الاستعلام من الصفر، نزّل [نسخة المشروع التي تحتوي على ملفات التشغيل](https://github.com/momenarman-max/Multi-Database-Design-for-a-Heritage-Tourism-Platform/tree/8451d4502dcd27b4d978746b1c966f2134223ff1)، واتّبع [خطوات تجهيز بيانات العيّنة](../../README.md#تشغيل-واجهة-الويب-على-جهاز-جديد) من مجلد `compose.yaml` حتى ينجح أمر `docker compose run --rm app seed`. افتح جلسة MongoDB بالأمر `docker compose exec mongo mongosh heritage` ثم شغّل الاستعلام التالي.
+
 ```javascript
 const atlas = db.getSiblingDB("heritage");
 const pipeline = [
